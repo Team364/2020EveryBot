@@ -107,9 +107,9 @@ public class Robot extends TimedRobot {
     outakeButton.whenPressed(() -> s_Intake.runIntake(OUTAKEPOWER)).whenReleased(() -> s_Intake.runIntake(0));
         
     //Controlling the Arm
-    armUp.whenPressed(new RunCommand(() -> s_Arm.moveArm(ARMSTOWEDPOSITION)));
-    armScore.whenPressed(new RunCommand(() -> s_Arm.moveArm(ARMSCORINGPOSITION)));
-    armDown.whenPressed(new RunCommand(() -> s_Arm.moveArm(ARMINTAKEPOSITION)));
+    armUp.whenPressed(new RunCommand(() -> s_Arm.moveArm(ARMSTOWEDPOSITION))).whenReleased(() -> doNothing());
+    armScore.whenPressed(new RunCommand(() -> s_Arm.moveArm(ARMSCORINGPOSITION))).whenReleased(() -> doNothing());
+    armDown.whenPressed(new RunCommand(() -> s_Arm.moveArm(ARMINTAKEPOSITION))).whenReleased(() -> doNothing());
 
     //GTA Drive
     s_Drivetrain.justDrive(controller.getRawAxis(2), controller.getRawAxis(3), controller.getRawAxis(0));
@@ -128,5 +128,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+  }
+
+  public void doNothing() {
+
   }
 }

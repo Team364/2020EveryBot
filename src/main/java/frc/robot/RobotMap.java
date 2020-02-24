@@ -2,7 +2,7 @@ package frc.robot;
 
 public class RobotMap {
     //Arm Positions
-    public static final double ARMSTOWEDPOSITION = 0;
+    public static final double ARMSTOWEDPOSITION = -300;
     public static final double ARMSCORINGPOSITION = 1500;
     public static final double ARMINTAKEPOSITION = 3000;
 
@@ -19,9 +19,9 @@ public class RobotMap {
     public static final int ARMTALON = 6;
 
     //Arm PID Constants
-    public static final double ARMKP = 0.25;
-    public static final double ARMKI = 0;
-    public static final double ARMKD = 0;
+    public static final double ARMKP = 0.5;
+    public static final double ARMKI = 0.001;
+    public static final double ARMKD = 100;
 
     //Supply Current Limits
     public static final int DRIVECONTINUOUSCURRENTLIMIT = 35;
